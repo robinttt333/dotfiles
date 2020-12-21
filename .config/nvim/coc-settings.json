@@ -1,0 +1,23 @@
+{
+	"coc.preferences.formatOnSaveFiletypes": [
+		"css",
+		"markdown",
+		"javascript",
+		"graphql",
+		"html",
+		"yaml",
+		"json",
+		"python"
+	],
+
+	"python.venvFolders": [
+		"envs",
+		".pyenv",
+		".direnv",
+		"~/.local/share/virtualenvs",
+		"~/.cache/pypoetry/virtualenvs"
+	],
+	"diagnostic.checkCurrentLine": true,
+	"coc.preferences.useQuickfixForLocations": true,
+	"prettier.useTabs": true
+}

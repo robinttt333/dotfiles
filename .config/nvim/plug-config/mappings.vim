@@ -11,7 +11,7 @@ noremap <leader><space> :nohlsearch<CR>
 "nnoremap <leader>m :marks<CR>
 nnoremap <leader>w :bd!<CR>
 "map <leader>f :StripWhitespace<CR>
-nnoremap <leader>a <Esc>ggVG<CR>
+nnoremap <C-a> <Esc>ggVG<CR>
 " Smart way to exit insert mode and save
 inoremap jk <Esc>l
 inoremap <C-s> <Esc>
@@ -21,6 +21,7 @@ nnoremap <C-s> :w!<CR>
 nnoremap <leader>p :ProjectFiles<CR>
 nnoremap <leader>f :Rg!<CR>
 nnoremap <leader>b :Buffers<CR>
+" switch between window splits
 nnoremap <leader>j <C-W><C-J>
 nnoremap <leader>k <C-W><C-K>
 nnoremap <leader>l <C-W><C-L>
@@ -40,3 +41,9 @@ nnoremap <leader>em :e $HOME/.config/nvim/plug-config/mappings.vim<cr>
 nnoremap <leader>eg :e $HOME/.config/nvim/plug-config/general.vim<cr>
 nnoremap <leader>ef :e $HOME/.config/nvim/plug-config/functions.vim<cr>
 nnoremap <leader>ep :e $HOME/.config/nvim/plug-config/plugins.vim<cr>
+
+" move lines up and down
+nnoremap <C-k>   :<C-u>silent! move-2<CR>==
+nnoremap <C-j> :<C-u>silent! move+<CR>==
+" Quickfix
+nnoremap <leader>qq :call ToggleQuickfix()<cr>

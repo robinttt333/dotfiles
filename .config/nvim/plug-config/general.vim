@@ -69,3 +69,6 @@ colorscheme dracula
 
 " clang setup
 autocmd BufWritePre *.h,*.cc,*.cpp call Formatonsave()
+
+" case insensitive search for ripgrep
+let g:rg_command = 'rg --vimgrep -S'

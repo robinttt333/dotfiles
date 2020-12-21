@@ -7,8 +7,8 @@ call plug#begin('~/.local/share/nvim/plugged')
   " Search text across files
   Plug 'sharkdp/bat'
   Plug 'BurntSushi/ripgrep'
+  " see thin vertial lines for space based indentation
   Plug 'Yggdroot/indentLine'
-  Plug 'sheerun/vim-polyglot'
   " Used to surround the text with brackets or quotes
   Plug 'tpope/vim-surround'
   " Used to get the icons in nerd tree

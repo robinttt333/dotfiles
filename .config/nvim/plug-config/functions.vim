@@ -10,7 +10,6 @@ function! ToggleQuickfix()
 				copen
 endfunction
 
-
 " Check if git dir exists if it does search from there else do Files ~ ie search from home
 function! s:find_files()
     let git_dir = system('git rev-parse --show-toplevel 2> /dev/null')[:-2]
@@ -47,19 +46,6 @@ function GuiTabLabel()
     return label . "%t"
 endfunction
 
-" This function moves lines up by a number ie positin
-function! MoveEm(position)
-  let saved_cursor = getpos(".")
-  let previous_blank_line = search('^$', 'bn')
-  let target_line = previous_blank_line + a:position - 1
-  execute 'move ' . target_line
-  call setpos('.', saved_cursor)
-endfunction
-
-for position in range(1, 9)
-  execute 'nnoremap m' . position . ' :call MoveEm(' . position . ')<cr>'
-endfor
-
 " Toggle between horizontal and vertical splits
 function! ToggleWindowHorizontalVerticalSplit()
   if !exists('t:splitType')
@@ -75,6 +61,7 @@ function! ToggleWindowHorizontalVerticalSplit()
     let t:splitType = 'vertical'
   endif
 endfunction
+
 " clang format on save for cpp files
 function! Formatonsave()
   let l:formatdiff = 1

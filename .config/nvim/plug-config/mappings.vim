@@ -45,5 +45,4 @@ nnoremap <leader>ep :e $HOME/.config/nvim/plug-config/plugins.vim<cr>
 " move lines up and down
 nnoremap <C-k>   :<C-u>silent! move-2<CR>==
 nnoremap <C-j> :<C-u>silent! move+<CR>==
-" Quickfix
 nnoremap <leader>qq :call ToggleQuickfix()<cr>

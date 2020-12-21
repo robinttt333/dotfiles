@@ -8,24 +8,12 @@ set nofixeol
 " Set vertical splits automatically to right
 set splitright
 
-" fzf basic settings
-let g:fzf_layout = {'up':'~90%', 'window': { 'width': 0.8, 'height': 0.8,'yoffset':0.5,'xoffset': 0.5 } }
-let $FZF_DEFAULT_OPTS = '--layout=reverse --info=inline'
-let $FZF_DEFAULT_COMMAND="rg --files --hidden .git"
-let g:fzf_colors =
-			\ { 'fg':      ['fg', 'Normal'],
-			\ 'bg':      ['bg', 'Normal'],
-			\ 'hl':      ['fg', 'Comment'],
-			\ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
-			\ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
-			\ 'hl+':     ['fg', 'Statement'],
-			\ 'info':    ['fg', 'PreProc'],
-			\ 'border':  ['fg', 'Ignore'],
-			\ 'prompt':  ['fg', 'Conditional'],
-			\ 'pointer': ['fg', 'Exception'],
-			\ 'marker':  ['fg', 'Keyword'],
-			\ 'spinner': ['fg', 'Label'],
-			\ 'header':  ['fg', 'Comment'] }
+" ripgrep
+if executable('rg')
+  let $FZF_DEFAULT_COMMAND = 'rg --files --follow --ignore-case --hidden -g "!{.git,node_modules,vendor}/*"'
+  set grepprg=rg\ --vimgrep
+  command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>).'| tr -d "\017"', 1, <bang>0)
+endif
 
 " Auto Pairs settings
 let g:AutoPairsMultilineClose=0
@@ -62,13 +50,8 @@ set undofile
 set undodir=/tmp
 set textwidth=110
 set colorcolumn=110
-set signcolumn=yes
-set updatetime=300
 
 colorscheme dracula
 
 " clang setup
 autocmd BufWritePre *.h,*.cc,*.cpp call Formatonsave()
-
-" case insensitive search for ripgrep
-let g:rg_command = 'rg --vimgrep -S'

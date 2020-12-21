@@ -4,9 +4,8 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'kshenoy/vim-signature'
   " Cool nvim startup page
   Plug 'mhinz/vim-startify'
-  " Search text across files
+  " syntnax highlight in preview windows
   Plug 'sharkdp/bat'
-  Plug 'BurntSushi/ripgrep'
   " see thin vertial lines for space based indentation
   Plug 'Yggdroot/indentLine'
   " Used to surround the text with brackets or quotes

@@ -16,9 +16,10 @@ function! s:find_files()
     if git_dir != ''
         execute 'GFiles --cached --others --exclude-standard'
     else
-        execute 'Files ~'
+        execute 'Files'
     endif
 endfunction
+
 command! ProjectFiles execute s:find_files()
 
 function GuiTabLabel()

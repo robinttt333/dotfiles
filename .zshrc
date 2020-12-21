@@ -26,20 +26,6 @@ source $ZSH/oh-my-zsh.sh
 export LANG=en_US.UTF-8
 
 alias jk='make test'
-## Starting tmux session on startup
-#if [[ -n $VIRTUAL_ENV && -e "${VIRTUAL_ENV}/bin/activate" ]]; then
-  #source "${VIRTUAL_ENV}/bin/activate"
-#fi
-#[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-#export PYENV_ROOT="$HOME/.pyenv"
-#export PATH="$PYENV_ROOT/bin:$PATH"
-#if command -v pyenv 1>/dev/null 2>&1; then
-  #eval "$(pyenv init -)"
-#fi
-#TranslateWheelToCursor=on
-#DisableWheelToCursorByCtrl=on
-#bindkey -s jk '\e'
-# Set Spaceship ZSH as a prompt
 
 # Automatically start x-server
 if systemctl -q is-active graphical.target && [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then
@@ -49,3 +35,4 @@ source /home/lazy/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/zsh-syntax-h
 neofetch
 export KEYTIMEOUT=1
 alias config='/usr/bin/git --git-dir=/home/lazy/.cfg/ --work-tree=/home/lazy'
+export BAT_THEME="Dracula"

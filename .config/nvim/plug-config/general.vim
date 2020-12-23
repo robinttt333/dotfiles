@@ -54,4 +54,4 @@ set colorcolumn=110
 colorscheme dracula
 
 " clang setup
-autocmd BufWritePre *.h,*.cc,*.cpp call Formatonsave()
+"autocmd BufWritePre *.h,*.cc,*.cpp call Formatonsave()

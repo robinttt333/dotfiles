@@ -47,7 +47,7 @@ battery 0 {
 }
 
 tztime local {
-	format = "%d-%m-%d %I:%M:%S %p"
+	format = "%d-%m-%Y %I:%M:%S %p"
 }
 
 disk "/" {

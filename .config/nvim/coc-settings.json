@@ -9,7 +9,7 @@
 		"json",
 		"python"
 	],
-
+	"clangd.fallbackFlags": ["-std=c++17"],
 	"python.venvFolders": [
 		"envs",
 		".pyenv",

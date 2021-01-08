@@ -1,7 +1,7 @@
 " Setting for showing tabs, spaces and end of line characters
 set list
 set listchars=tab:→\ ,eol:↲,nbsp:␣,trail:•,extends:⟩,precedes:⟨
-
+set modifiable
 " Remove an extra line after save
 set nofixeol
 
@@ -55,3 +55,9 @@ colorscheme dracula
 
 " clang setup
 "autocmd BufWritePre *.h,*.cc,*.cpp call Formatonsave()
+" persist folds across sessions
+augroup AutoSaveFolds
+  autocmd!
+  autocmd BufWinLeave * mkview
+  autocmd BufWinEnter * silent loadview
+augroup END

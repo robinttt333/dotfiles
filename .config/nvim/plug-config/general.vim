@@ -56,8 +56,8 @@ colorscheme dracula
 " clang setup
 "autocmd BufWritePre *.h,*.cc,*.cpp call Formatonsave()
 " persist folds across sessions
-augroup AutoSaveFolds
+augroup remember_folds
   autocmd!
   autocmd BufWinLeave * mkview
-  autocmd BufWinEnter * silent loadview
+  autocmd BufWinEnter * silent! loadview
 augroup END

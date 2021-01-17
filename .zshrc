@@ -32,7 +32,8 @@ if systemctl -q is-active graphical.target && [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]
   exec startx
 fi
 source /home/lazy/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-neofetch
+neofetch --w3m ~/applicationNumber.png
 export KEYTIMEOUT=1
 alias config='/usr/bin/git --git-dir=/home/lazy/.cfg/ --work-tree=/home/lazy'
 export BAT_THEME="Dracula"
+
